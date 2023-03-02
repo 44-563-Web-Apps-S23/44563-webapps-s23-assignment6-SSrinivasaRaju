@@ -13,7 +13,7 @@
  
 <body>
 
-<h2>Painter entry Lakshmi Karthik Ravuri</h2>
+<h2>Painter entry Sarikonda Srinivasa Raju</h2>
 
 <form>
     <label for="form1_password">The hidden painter name</label>
@@ -38,10 +38,10 @@ function checkPainter (){
         alert("Sorry, ran out of guesses")
     }else{
     console.log("Getting form values")
-    hidden_painter = document.getElementById("form1_password").value
-    guess_painter = document.getElementById("form1_painter").value
+    hidden = document.getElementById("form1_password").value
+    guess_paint = document.getElementById("form1_painter").value
     out = document.getElementById("result")
-    if(hidden_painter == guess_painter){
+    if(hidden == guess_paint){
         good++
         out.innerHTML = good
         alert("You got it right")
@@ -54,22 +54,22 @@ function checkPainter (){
 }
 </script>
 <div class="container-fluid">
-    <img src="Inula.jpg" class="img-fluid" id="imqge" alt="Inula", onclick=selectImage() height=100, width=100>    
+    <img src="ACCA.jpg" class="img-fluid" id="imqge" alt="ACCA", onclick=selectImage() height=100, width=100>    
 </div>
 <script>
     useImage =1
     function selectImage(){
         switch(useImage){
             case 1:
-                document.getElementById("imqge").src="Ugni_molinae.jpg";
+                document.getElementById("imqge").src="ACCA.jpg";
                 useImage++;
                 break
             case 2:
-                document.getElementById("imqge").src="Robina9146.jpg";
+                document.getElementById("imqge").src="rose.jpg";
                 useImage++;
                 break;
             case 3:
-                document.getElementById("imqge").src="Inula.jpg";
+                document.getElementById("imqge").src="Salvia.jpg";
                 useImage=1
                 break;
         }

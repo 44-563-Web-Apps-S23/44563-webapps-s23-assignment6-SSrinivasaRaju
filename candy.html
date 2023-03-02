@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>candy page</title>
+    </head>
+ 
+<body>
+
+<h2> Sarikonda Srinivasa Raju chooses candy </h2>
+
+<form>
+    <label for="form1_darkvalue">darkvalue Chocolate</label>
+    <input type ="checkbox" id="form1_darkvalue" name="form1_darkvalue" value=True> <br>
+
+    <label for="form1_nutsvalue">nutsvalue</label>
+    <input type ="checkbox" id="form1_nutsvalue" name="form1_nutsvalue" value=True> <br>
+
+    <label for="form1_chew">chewyvalue </label>
+    <input type ="checkbox" id="form1_chew" name="form1_chew" value=False> <br>
+
+    <input type="button" onclick="selectBox()" value="Select a box ">
+</form>
+<p id="result">This text will be replaced </p>
+<form>
+    <label for="form1_sizevalue">Enter the sizevalue </label>
+    <input type ="text" id="form1_sizevalue" name="form1_sizevalue" value="sizevalue"> <br>
+
+    <label for="form1_pricevalue">Enter pricevalue</label>
+    <input type ="text" id="form1_pricevalue" name="form1_pricevalue" > <br>
+
+    <input type="button" onclick="updateBox()" value="Update the box">
+</form>
+<p id="resultt">This text will be replaced </p>
+
+
+
+<script> 
+
+
+function updateBox(){
+    
+    var toShow = ""
+    console.log("Getting form values")
+    sizevalue = document.getElementById("form1_sizevalue").value
+    pricevalue = document.getElementById("form1_pricevalue").value
+    darkvalue = document.getElementById("form1_darkvalue").checked
+    nutsvalue = document.getElementById("form1_nutsvalue").checked
+    chewyvalue = document.getElementById("form1_chew").checked
+
+    if(darkvalue){
+        my_candy_box.sizevalue=pricevalue;
+    }
+    if(nutsvalue){
+        my_candy_box.sizevalue=pricevalue;
+    }
+    if(chewyvalue){
+        my_candy_box.sizevalue=pricevalue;
+    }
+    
+    out = document.getElementById("resultt")
+    out.innerHTML = JSON.stringify(my_candy_box);
+}
+
+
+var  my_candy_box={};
+function selectBox (){
+    my_candy_box={};
+    console.log("Getting form values")
+    
+    darkvalue = document.getElementById("form1_darkvalue").checked
+    nutsvalue = document.getElementById("form1_nutsvalue").checked
+    chewyvalue = document.getElementById("form1_chew").checked
+    
+    out = document.getElementById("result")
+    if(darkvalue){
+        my_candy_box.darkvalue=true;
+    } 
+    else{
+        my_candy_box.darkvalue=false;
+    } 
+    if(nutsvalue){
+        my_candy_box.nutsvalue=true;
+    } 
+    else{
+        my_candy_box.nutsvalue=false;
+    } 
+    if(chewyvalue){
+        my_candy_box.chewyvalue=true;
+    } 
+    else{
+        my_candy_box.chewyvalue=false;
+    } 
+    out.innerHTML = JSON.stringify(my_candy_box);
+}
+</script>
+
+</body>
+</html>
